@@ -1,0 +1,29 @@
+name: birthday clown
+
+on:
+  schedule:
+    - cron: "0 23 * * *" # 6am WIB (UTC+7)
+  workflow_dispatch:
+
+jobs:
+  send-wishes:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.14"
+
+      - name: install dependencies
+        run: pip install -r requirements.txt
+
+      - name: run clown
+        run: python clown.py
+        env:
+          WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
+          BIRTHDAY_PING_ROLE: ${{ secrets.BIRTHDAY_PING_ROLE }}
+          CALENDAR_URL: ${{ secrets.CALENDAR_URL }}
