@@ -25,4 +25,4 @@ def get_birthdays():
             event_date = component["DTSTART"].dt
             if event_date.month == today.month and event_date.day == today.day:
                 birthdays.append(str(component["SUMMARY"]))
-    return birthdays
+    return {"birthdays": birthdays, "date": today}

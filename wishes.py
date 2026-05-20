@@ -26,14 +26,6 @@ emojis = [
 ]
 
 gifs = [
-    "https://tenor.com/bVp6m.gif",
-    "https://tenor.com/k0GHfjzQdEP.gif",
-    "https://tenor.com/uYHiFodGa30.gif",
-    "https://tenor.com/pmzMimqDYJD.gif",
-    "https://tenor.com/eK1ysIL7exU.gif",
-    "https://tenor.com/view/hug-gif-11471218339258774461",
-    "https://tenor.com/view/squid-game-squid-game-3-squid-game-season-3-gi-hun-front-man-gif-310917822261103384",
-    "https://tenor.com/view/spongebob-patrick-stan-twitter-ethansinteriude-merlinators-gif-8957828476290492233",
     "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZXVkYnd5MmluOHNqM2t5MTBoM2R3ejR3YW83N3ZjOGYxaTBuNmVwayZlcD12MV9naWZzX3NlYXJjaCZjdD1n/i17zHLTMt1SmJMv6Aw/giphy.gif",
     "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZXVkYnd5MmluOHNqM2t5MTBoM2R3ejR3YW83N3ZjOGYxaTBuNmVwayZlcD12MV9naWZzX3NlYXJjaCZjdD1n/U4DswrBiaz0p67ZweH/giphy.gif",
     "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdTRiN3Qzdnc3eXB3MHBhNHU1NWR6MjV4d2ttNGs2MXdnenN1cTN2eSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/11sBLVxNs7v6WA/giphy.gif",

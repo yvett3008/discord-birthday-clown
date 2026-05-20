@@ -19,9 +19,8 @@ else:
     print("Careful! ENV is not set yet, defaulting to `dev`")
     webhook = os.getenv("DEV_WEBHOOK_URL")
 
-requests.post(webhook, json={"content": f"ENV is {env}"})
-
-birthdays = get_birthdays() # returns an array of people who have a birthday
+fetch = get_birthdays() # { birthdays: ["array", "of", "names"], date}
+birthdays = fetch["birthdays"]  # returns an array of people who have a birthday
 
 if len(birthdays) > 0:
     emoji_content = []
@@ -41,8 +40,21 @@ if len(birthdays) > 0:
             multiple_nama=multiple_nama, last_nama=last_nama
         )
 
-    emoji_str = "".join(emoji_content)
-    requests.post(webhook, json={"content": f"{ping_role}\n{content} {emoji_str}"})
-    requests.post(webhook, json={"content": random.choice(gifs)})
+    emoji_str = " ".join(emoji_content)
+    requests.post(
+        webhook,
+        json={
+            "content": ping_role,
+            "embeds": [
+                {
+                    "title": f"{content} {emoji_str}",
+                    "description": f"{fetch["date"].strftime("%d %B %Y")}",
+                    "color": 0xD5730C,
+                    "image": {"url": random.choice(gifs)},
+                }
+            ],
+        },
+    )
 else:
     print("No one is having a birthday today")
+
