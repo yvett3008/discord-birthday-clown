@@ -8,8 +8,18 @@ import random
 from wishes import wishes_single, wishes_double, wishes_multiple, emojis, gifs
 
 load_dotenv()
-webhook = os.getenv("WEBHOOK_URL")
 ping_role = os.getenv("BIRTHDAY_PING_ROLE")
+env = os.getenv("ENV", "dev")
+webhook = ""
+if env == "dev":
+    webhook = os.getenv("DEV_WEBHOOK_URL")
+elif env == "prod":
+    webhook = os.getenv("WEBHOOK_URL")
+else:
+    print("Careful! ENV is not set yet, defaulting to `dev`")
+    webhook = os.getenv("DEV_WEBHOOK_URL")
+
+requests.post(webhook, json={"content": f"ENV is {env}"})
 
 birthdays = get_birthdays() # returns an array of people who have a birthday
 
