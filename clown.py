@@ -9,7 +9,7 @@ from wishes import wishes_single, wishes_double, wishes_multiple, emojis, gifs
 
 load_dotenv()
 ping_role = os.getenv("BIRTHDAY_PING_ROLE")
-env = os.getenv("ENV", "dev")
+env = os.getenv("ENV")
 webhook = ""
 if env == "dev":
     webhook = os.getenv("DEV_WEBHOOK_URL")
@@ -19,7 +19,7 @@ else:
     print("Careful! ENV is not set yet, defaulting to `dev`")
     webhook = os.getenv("DEV_WEBHOOK_URL")
 
-fetch = get_birthdays() # { birthdays: ["array", "of", "names"], date}
+fetch = get_birthdays()  # { birthdays: ["array", "of", "names"], date}
 birthdays = fetch["birthdays"]  # returns an array of people who have a birthday
 
 if len(birthdays) > 0:
@@ -44,7 +44,7 @@ if len(birthdays) > 0:
     requests.post(
         webhook,
         json={
-            "content": ping_role,
+            "content": "test",
             "embeds": [
                 {
                     "title": f"{content} {emoji_str}",
@@ -57,4 +57,3 @@ if len(birthdays) > 0:
     )
 else:
     print("No one is having a birthday today")
-
