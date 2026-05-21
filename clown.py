@@ -44,7 +44,7 @@ if len(birthdays) > 0:
     requests.post(
         webhook,
         json={
-            "content": "test",
+            "content": ping_role if env == "prod" else "test",
             "embeds": [
                 {
                     "title": f"{content} {emoji_str}",
