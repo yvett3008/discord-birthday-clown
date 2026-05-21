@@ -27,4 +27,5 @@ jobs:
           WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
           BIRTHDAY_PING_ROLE: ${{ secrets.BIRTHDAY_PING_ROLE }}
           CALENDAR_URL: ${{ secrets.CALENDAR_URL }}
+          ZONE_INFO: ${{ secrets.ZONE_INFO }}
           ENV: prod
