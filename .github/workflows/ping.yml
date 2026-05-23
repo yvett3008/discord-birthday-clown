@@ -1,8 +1,6 @@
 name: ping test
 
 on:
-  schedule:
-    - cron: "0 23 * * *"  # 6am WIB (UTC+7)
   workflow_dispatch:
 
 jobs:
